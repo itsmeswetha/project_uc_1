@@ -1,5 +1,5 @@
 variable "vpc_name" {
-  
+    
 }
 
 variable "subnet_name" {
@@ -23,3 +23,9 @@ variable "target_tag" {
 variable "source_tags" {
   
 }
+variable "project_id" {
+  
+}
+variable "port" {
+    type = list(string)
+  }

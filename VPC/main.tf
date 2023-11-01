@@ -1,15 +1,4 @@
-terraform {
-  required_providers {
-    google = {
-      source = "hashicorp/google"
-      version = "5.4.0"
-    }
-  }
-}
 
-provider "google" {
-  # Configuration options
-}
 
 # Creating a VPC
 
@@ -36,8 +25,15 @@ resource "google_compute_firewall" "network-firewall" {
   source_tags = var.source_tags
 
   allow {
-    protocol = var.proto
-    ports    = var.port
+    protocol = "tcp"
+    ports    = ["80", "8080", "22","1000-2000"]
   }
+  allow {
+ protocol = "icmp"
+  }
+}
+
+module "vpc" {
+  source = "value"
 }
 
