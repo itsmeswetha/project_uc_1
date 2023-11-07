@@ -109,3 +109,6 @@ variable "router2peer1" {
 variable "router2peer2" {
   
 }
+variable "projectid" {
+  
+}

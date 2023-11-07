@@ -109,6 +109,7 @@ resource "google_compute_router_interface" "router1_interface1" {
   router     = google_compute_router.router1.name
   ip_range   = "169.254.0.1/30"
   vpn_tunnel = google_compute_vpn_tunnel.tunnel1.name
+  region = "us-central1"
 }
 
 resource "google_compute_router_peer" "router1_peer1" {
