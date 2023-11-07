@@ -2,9 +2,8 @@
 
 resource "google_compute_firewall" "network-firewall" {
   name = var.firewall_name
-  network = google_compute_network.network
+  network = var.networkname
   target_tags = var.target_tag  
-  source_ranges = var.source_ranges
   source_tags = var.source_tags
 
   allow {

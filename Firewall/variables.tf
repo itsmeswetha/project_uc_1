@@ -10,3 +10,6 @@ variable "source_ranges" {
 variable "source_tags" {
   
 }
+variable "networkname" {
+  
+}
