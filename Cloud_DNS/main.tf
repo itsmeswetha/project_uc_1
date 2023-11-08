@@ -1,9 +1,11 @@
+
+
 # to create a DNS zone
 
 resource "google_dns_managed_zone" "zone" {
   name          = var.zonename
   dns_name      = "StepUpCloudEngineer.In" 
-  description   = "Domain for lb ip"
+  description   = "Domain name for lb ip"
   force_destroy = "true"
 }
 
