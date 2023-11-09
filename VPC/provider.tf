@@ -10,4 +10,5 @@ terraform {
 provider "google" {
   # Configuration options
   project = var.projectid
+  region = var.defaultprojectregion
 }
