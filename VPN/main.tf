@@ -14,12 +14,14 @@ resource "google_compute_network" "network1" {
   name                    = var.network1
   routing_mode            = "Global"
   auto_create_subnetworks = false
+  project = var.project1
 }
 
 resource "google_compute_network" "network2" {
   name                    = var.network2
   routing_mode            = "GLOBAL"
   auto_create_subnetworks = false
+  project = var.project2
 }
 
 resource "google_compute_subnetwork" "network1_subnet1" {

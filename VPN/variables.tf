@@ -150,3 +150,11 @@ variable "projectid" {
   type = string
   description = "project id"
 }
+variable "project1" {
+  type = string
+  description = "Project 1"
+}
+variable "project2" {
+  type = string
+  description = "Project 2"
+}
