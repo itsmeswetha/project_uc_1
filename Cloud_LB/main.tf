@@ -4,7 +4,7 @@
 resource "google_compute_backend_bucket" "backendbucket" {
   name = var.backendname
   bucket_name = google_storage_bucket.backend-for-cdn-lb.name
-  description = "This backend bucket will contain a static website"
+  description = "This is a backend bucket for CDN and LB"
   enable_cdn = true
 }
 
@@ -14,15 +14,24 @@ resource "google_storage_bucket" "backend-for-cdn-lb" {
   name = var.bucketname
   location = var.bucketlocation
 }
+
+resource "google_storage_bucket_object" "static-website" {
+  name = var.objname
+ bucket = google_storage_bucket.backend-for-cdn-lb.name
+ source = "../static_website/index.html"
+}
+
+resource "google_storage_object_access_control" "Website-access" {
+  role = "READER"
+  entity = "allUsers"
+  object = google_storage_bucket_object.static-website.name
+  bucket = google_storage_bucket.backend-for-cdn-lb.name
+}
 # Reserve a static external IP address
 
 resource "google_compute_global_address" "ipforlb" {
   name          = "static-ip-for-lb"  # Change this line
-  project       = var.project_id
-  description   = "Static IP for Load Balancer"
-  purpose       = "EXTERNAL"
-  address_type  = "EXTERNAL"
-}
+  }
 
 
 # to create a DNS zone

@@ -22,3 +22,6 @@ variable "zonename" {
 variable "rulename" {
   
 }
+variable "objname" {
+  
+}
