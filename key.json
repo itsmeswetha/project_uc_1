@@ -1,0 +1,13 @@
+{
+    "type": "service_account",
+    "project_id": "arboreal-path-397504",
+    "private_key_id": "89b3b05e71ba2318f31ab9eb1d718c5a11dd1d80",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC4YbDb4SIstEGa\n+mAmn016an/G7ahfQylmY6sBqYxtsiiCIi1FLpW3GNsJuQ/2WQ8409v8IVkXgC/M\nfaRih5d0/I2qRNf7BikNLg4y3q7qnzitDVrw+oUCW5aG/+Qiynm9ed3eav7c2Z/7\n/ybG5w+Nv1sUBR1wivDfo1u2VcaOc2Ww7h0Sl5WyU/oegX1Su73K6faVLKVZguoX\nKgiOQzvOdv/Lhtfh8cSJSnJDI8+EvFwaEbDJnE81jfjx9Xt2rrlb+m3Gng4bnOJ8\nvYVzWlmPMNjRxYDtd+3BcjzmGLMtiC5G88QWTQQjn4SxPtopOH8UT4wcTSQ9x+k9\nCylylLWlAgMBAAECggEAB9LWsHsc5PJgcZqGd5e9L7YS0Ovm/+UiKGmPPoVQDkbd\nKCnEwPw+jGPeG3YCTYzZiVWYA9qduf0Nn4AvTaJSP2Zd/n0TAGBHtVBLIvEcUUag\nntsuYi5HHuKoVaHIWjTm4IQqHBTEgWDXRIKURc6qdB8hVrf21/5/77AHUAp+CoTx\nj3X2Op4z4oQEe9Cs4ZAIDG9QMQ+EqIJu2bBMmm9gGNi6Vydmfqj3L33HRdlCdafw\nFFSVaWvDn87g1rI8Lz2EC+IrxEp3v+YEa+NLCZph0mUY3zFzEuCieKMuL9zLf4lQ\nHTClt/2t+gk8xdW8EhaRhLlQHctpKRazsRw+rB+ZKwKBgQDaMAeGEHH1P/Xo67hu\nOCPRhDsYpU6NReDXKWKGBApMqP0ukxZ4oZ/I8RJ3IPW/6sxUtgS3MTjiOJTpSS63\nNUMwGpD4jImd8300j1JbqlIlCWS3Ofo4wquHPtzjtY7tu7DC+ZFl1b147CpqMJv8\nOgzyuRY0e1nZytqvlinHVhDvtwKBgQDYVdiMfbIzPrdVYh6f95K6C7tvyPQTcMXW\nGPTaR/Er4n0RcTt8abg6bbyk3N8+4Zl05pMwjcz/YraBKS0dwRZLR1B7F2nZe/b1\nwd7TmOCcifKOeMGLjgTBGf2e/zJEVR8G6XYL5JaLEvOn5eZub880G0I5rzOdAqSc\nbs6fjrBNgwKBgQChoyk/uVkjDhI4TsCf7rkiUyqQlI4//H+YBlG15LJYnmyKH29r\nSJkd/PHoDSPh3KkpLHsL18xDUxWGSa/xC+VNcrDpYPvmZubflDm4LNKUG4RgdPQZ\nLqZyGDD+BJfxKLXHi6maXqDyP0sgxggY8Ex9WH7JvIQQ48XkhINI6Eq9uwKBgAbg\nO6DDgf10+djB5J1K/iPhqZR0+6T+iZszcdzaOoUdjsIWKkDbD1r0D/Hhf0r9WqZH\nidgaObDIT2qth1yRvYao/pra9KdP9Fp9TfrFuiXfkJEMr4IjAm2syM3b6JoZZoIO\nu4zHOC21bX8hpIBQF3Ldhu5UbjyIT/kU4IZbv6jHAoGAJstDQ+7PTaiXDSQkHt7O\n6XRbAEKQ63PmV4IzuhghSCNgQhjZCpQwqF/Ux3qB0iY+TPHYTh6SGrWVj5z1iScD\nEA5C5LZOo0TaoCuthxLZRsnd2cE2gw1o1l0NWg7m30aFyb18BENzYNo30+7KXhfC\nkC6YYjD2/2nZnO9h8v1owBQ=\n-----END PRIVATE KEY-----\n",
+    "client_email": "use-case-sa@arboreal-path-397504.iam.gserviceaccount.com",
+    "client_id": "113830054693552256664",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/use-case-sa%40arboreal-path-397504.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }

@@ -3,8 +3,7 @@
 resource "google_storage_bucket" "bucket" {
   name = var.bucketname
   location = var.bucketregion
-  force_destroy = false
-  storage_class = "STANDARD"
+   storage_class = "STANDARD"
   versioning {
     enabled = true
   }

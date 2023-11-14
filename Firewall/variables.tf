@@ -1,15 +1,25 @@
+
+
 variable "firewall_name" {
-  
-}
-variable "target_tag" {
-  
-}
+  type =string
+  }
+
 variable "source_ranges" {
-  
+  type = string
 }
-variable "source_tags" {
-  
-}
+
 variable "networkname" {
+  type = string
+}
+variable "tcpports" {
+  type = list(string)
+}
+
+variable "targettag" {
+}
+
+variable "sourcetags" {
+}
+variable "project_id" {
   
 }

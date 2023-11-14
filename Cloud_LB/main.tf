@@ -30,7 +30,7 @@ resource "google_storage_object_access_control" "Website-access" {
 # Reserve a static external IP address
 
 resource "google_compute_global_address" "ipforlb" {
-  name          = "static-ip-for-lb"  # Change this line
+  name          = "static-ip-for-lb" 
   }
 
 
@@ -57,15 +57,7 @@ resource "google_dns_record_set" "records" {
 resource "google_compute_url_map" "urlmap" {
  name = var.urlmapname 
  default_service = google_compute_backend_bucket.backendbucket.self_link
- host_rule {
-   hosts = ["*"]
-   path_matcher = "allpaths"
  }
-path_matcher {
-  name = "allpaths"
-  default_service = google_compute_backend_bucket.backendbucket.self_link
-}
-}
 
 # Create a load balancer
 
@@ -76,11 +68,11 @@ resource "google_compute_target_http_proxy" "loadbalancer" {
 
 # forwarding rule for load balancer
 
-resource "google_compute_forwarding_rule" "lbrule" {
+resource "google_compute_global_forwarding_rule" "lbrule" {
   name = var.rulename
   load_balancing_scheme = "EXTERNAL"
   ip_address = google_compute_global_address.ipforlb.address
   ip_protocol = "TCP"
   port_range = "80"
-  target = google_compute_target_http_proxy.loadbalancer.self_link
+  target = google_compute_target_http_proxy.loadbalancer.self_link 
 }

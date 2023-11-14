@@ -1,15 +1,42 @@
-variable "vpcname" {
+#gcs variables
+variable "projectid1" {
   
 }
+variable "bucketregion1" {
+  
+}
+variable "bucketname1" {
+  
+}
+#Provider Variables
 variable "projectid" {
   
 }
+
+variable "defaultprojectregion" {
+  
+}
+
+#VPC Variables
+
+variable "vpcname" {
+  
+}
+
+variable "vpcregion"{
+
+}
+
+variable "defaultprojectregion" {
+  
+}
+
+#Subnet Variables
+
 variable "network" {
   
 }
-variable "networksubnet" {
-  
-}
+
 variable "subnetip" {
   
 }
@@ -19,19 +46,22 @@ variable "subnetregion" {
 variable "subnetname" {
   
 }
+
+#Firewall variables
+
 variable "targettag" {
   
 }
 variable "sourcetag" {
   
 }
-variable "networkname" {
-  
-}
 variable "sourceranges" {
   
 }
 variable "firewallname" {
+  
+}
+variable "tcpports" {
   
 }
 
@@ -149,5 +179,54 @@ variable "router2peer2" {
   
 }
 variable "projectid" {
+  
+}
+variable "vpcregion"{
+
+}
+variable "project1" {
+  
+}
+variable "project2" {
+  
+}
+
+#Router Variables
+
+variable "routerregion3" {
+  
+}
+
+variable "asn3" {
+  
+}
+
+#LB Variables
+
+variable "bucketname" {
+  
+}
+variable "backendname" {
+  
+}
+variable "bucketlocation" {
+  
+}
+variable "lbname" {
+  
+}
+variable "urlmapname"{
+
+}
+variable "project_id" {
+  
+}
+variable "zonename" {
+  
+}
+variable "rulename" {
+  
+}
+variable "objname" {
   
 }

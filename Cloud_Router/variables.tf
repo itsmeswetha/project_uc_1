@@ -4,6 +4,9 @@ variable "network1router1" {
 variable "routerregion" {
   
 }
-variable "asn1" {
+variable "asn3" {
+  
+}
+variable "project_id" {
   
 }

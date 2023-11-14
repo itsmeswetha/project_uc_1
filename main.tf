@@ -1,5 +1,14 @@
 # Creating modules to build all the instances at the same time
 
+/*********************************
+   Storing statefile in bucket
+**********************************/
+module "gcs"{
+    source = "./GCS"
+    projectid = var.projectid1
+    bucketregion = var.bucketregion1
+    bucketname = var.bucketname1
+}
 
 /*********************************
          VPC Configuration
@@ -8,7 +17,8 @@
 module "VPC"{
 source = "./VPC"
 vpc_name = var.vpcname
-projectid = var.projectid
+projectid = provider.google.project
+defaultprojectregion = provider.google.region
 }
 
 /*********************************
@@ -17,8 +27,8 @@ projectid = var.projectid
 
 module "subnet"{
     source = "./Subnet"
-    project-id = var.projectid
-    networksubnet = var.networksubnet
+    project-id = provider.google.project
+    networksubnet = module.VPC.name
     subnet_cidr = var.subnetip
     subnet_name = var.subnetname
     subnet_region = var.subnetregion
@@ -29,11 +39,12 @@ module "subnet"{
 **********************************/
 module "firewallrule"{
     source = "./Firewall"
-    target_tag = var.targettag
-    source_tags = var.sourcetag
+    targettag = var.targettag
+    sourcetags = var.sourcetag
     source_ranges = var.sourceranges
-    networkname = var.networkname
+    networkname = module.VPC.name
     firewall_name = var.firewallname
+    tcpports = var.tcpports
 }      
 
 /***********************************
@@ -80,5 +91,34 @@ module "vpn" {
   secret1 = var.secret1
   secret2 = var.secret2
   projectid = var.projectid
+  project1 = var.project1
+  project2 = var.project2
+}
 
+/*********************************
+     Router Configuration
+**********************************/
+
+module "router" {
+  source = "./Cloud_Router"
+  network1router1 = module.VPC.name
+  routerregion = var.routerregion3
+  asn3 = var.asn3
+}
+
+/***********************************
+     DNS, LB and CDN
+************************************/
+
+module "lb" {
+  source = "./Cloud_LB"
+  backendname = var.backendname
+  project_id = provider.google.project
+  zonename = var.zonename
+  urlmapname = var.urlmapname
+  objname = var.objname
+  bucketname = var.bucketname
+  bucketlocation = var.bucketlocation
+  rulename = var.rulename
+  lbname = var.lbname
 }

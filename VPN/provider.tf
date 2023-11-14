@@ -9,4 +9,5 @@ terraform {
 provider "google" {
   project     = var.projectid
   region      = "us-central1"
+  credentials = file("key.json")
 }

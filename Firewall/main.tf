@@ -3,12 +3,12 @@
 resource "google_compute_firewall" "network-firewall" {
   name = var.firewall_name
   network = var.networkname
-  target_tags = var.target_tag  
-  source_tags = var.source_tags
+  target_tags = var.targettag  
+  source_tags = var.sourcetags
 
   allow {
     protocol = "tcp"
-    ports    = ["80", "8080", "22","1000-2000"]
+    ports    = var.tcpports
   }
   allow {
  protocol = "icmp"
