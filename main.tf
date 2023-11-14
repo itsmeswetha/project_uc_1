@@ -45,6 +45,7 @@ module "firewallrule"{
     networkname = module.VPC.name
     firewall_name = var.firewallname
     tcpports = var.tcpports
+    projectid = var.projectid
 }      
 
 /***********************************
@@ -101,9 +102,10 @@ module "vpn" {
 
 module "router" {
   source = "./Cloud_Router"
-  network1router1 = module.VPC.name
+  network1router1 = var.network3router3
   routerregion = var.routerregion3
   asn3 = var.asn3
+  project_id = var.project_id
 }
 
 /***********************************

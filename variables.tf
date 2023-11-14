@@ -230,3 +230,7 @@ variable "rulename" {
 variable "objname" {
   
 }
+# router variables
+variable "network3router3" {
+  
+}

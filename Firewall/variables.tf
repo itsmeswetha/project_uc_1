@@ -20,6 +20,6 @@ variable "targettag" {
 
 variable "sourcetags" {
 }
-variable "project_id" {
+variable "projectid" {
   
 }
