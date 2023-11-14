@@ -1,4 +1,4 @@
-variable "network1router1" {
+variable "routername" {
   
 }
 variable "routerregion" {
@@ -7,6 +7,6 @@ variable "routerregion" {
 variable "asn3" {
   
 }
-variable "project_id" {
+variable "vpcforrouter" {
   
 }

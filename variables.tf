@@ -1,236 +1,213 @@
-#gcs variables
-variable "projectid1" {
-  
-}
-variable "bucketregion1" {
-  
-}
-variable "bucketname1" {
-  
-}
-#Provider Variables
+
+# Variables for provider
+
 variable "projectid" {
   
 }
-
-variable "defaultprojectregion" {
+variable "projectregion" {
   
 }
 
-#VPC Variables
+# Variables for GCS
 
-variable "vpcname" {
+variable "bucketregion1forsf" {
   
 }
-
-variable "vpcregion"{
-
-}
-
-variable "defaultprojectregion" {
+variable "bucketname1forsf" {
   
 }
 
-#Subnet Variables
+# Variables for VPC
 
-variable "network" {
-  
-}
-
-variable "subnetip" {
-  
-}
-variable "subnetregion" {
-  
-}
-variable "subnetname" {
+variable "firstvpcname" {
   
 }
 
-#Firewall variables
+# Variables for Subnet
 
-variable "targettag" {
-  
-}
-variable "sourcetag" {
-  
-}
-variable "sourceranges" {
-  
-}
-variable "firewallname" {
-  
-}
-variable "tcpports" {
+variable "subnetipinfirstvpc" {
   
 }
 
-#variables for vpn
-
-variable "asn1" {
-  
-}
-variable "asn2" {
-  
-}
-variable "network1" {
-  
-}
-variable "network2" {
-  
-}
-variable "gatewayname1" {
-  
-}
-variable "gatewayname2" {
-  
-}
-variable "routerregion" {
-  
-}
-variable "network1router1" {
-  
-}
-variable "network2router2" {
-  
-}
-variable "network1region1" {
-  
-}
-variable "network1region2" {
-  
-}
-variable "network2region1" {
-  
-}
-variable "network2region2" {
-  
-}
-variable "region1" {
-  
-}
-variable "region2" {
-  
-}
-variable "network1subnet1" {
-  
-}
-variable "network1subnet2" {
-  
-}
-variable "network2subnet1" {
-  
-}
-variable "network2subnet2" {
-  
-}
-variable "range1" {
-  
-}
-variable "range2" {
-  
-}
-variable "range3" {
-  
-}
-variable "range4" {
-  
-}
-variable "interface0tunnel1" {
-  
-}
-variable "interface0tunnel2" {
-  
-}
-variable "interface1tunnel1" {
-  
-}
-variable "interface1tunnel2" {
-  
-}
-variable "secret1" {
-  
-}
-variable "secret2" {
-  
-}
-variable "router1interface1" {
-  
-}
-variable "router1interface2" {
-  
-}
-variable "router2interface1" {
-  
-}
-variable "router2interface2" {
-  
-}
-variable "router1peer1" {
-  
-}
-variable "router1peer2" {
-  
-}
-variable "router2peer1" {
-  
-}
-variable "router2peer2" {
-  
-}
-variable "projectid" {
-  
-}
-variable "vpcregion"{
-
-}
-variable "project1" {
-  
-}
-variable "project2" {
+variable "subnetnameinfirstvpc" {
   
 }
 
-#Router Variables
+variable "regionoffirstvpcsubnet" {
+  
+}
 
+#Variables in firewall
+
+variable "firewallinfirstvpc" {
+  
+}
+
+variable "targetvmtags" {
+  
+}
+variable "portstoallow" {
+  
+}
+variable "allowthesourceip" {
+  
+}
+
+
+#Variables in VPN
+
+variable "cidrforsubnet1" {
+  
+}
+variable "cidrforsubnet2" {
+  
+}
+variable "cidrforsubnet3" {
+  
+}
+variable "cidrforsubnet4" {
+  
+}
+variable "asnforrouter1" {
+  
+}
+variable "asnforrouter2" {
+  
+}
+variable "tunnel00" {
+  
+}
+variable "tunnel01" {
+  
+}
+variable "tunnel11" {
+  
+}
+variable "tunnel12" {
+  
+}
+variable "vpcnetworkname1" {
+  
+}
+variable "vpcnetworkname2" {
+  
+}
+variable "subnet1nameinnet1" {
+  
+}
+variable "subnet2nameinnet1" {
+  
+}
+variable "subnet1nameinnet2" {
+  
+}
+variable "subnet2nameinnet2" {
+  
+}
+variable "subnet11region1" {
+  
+}
+variable "subnet21region2" {
+  
+}
+variable "subnet12region1" {
+  
+}
+variable "subnet22region2" {
+  
+}
+variable "bgpinterface11" {
+  
+}
+variable "bgpinterface12" {
+  
+}
+variable "bgppeer11" {
+  
+}
+variable "bgppeer12" {
+  
+}
+variable "bgpinterface21" {
+  
+}
+variable "bgpinterface22" {
+  
+}
+variable "bgppeer21" {
+  
+}
+variable "bgppeer22" {
+  
+}
+variable "gatewaynameinvpc1" {
+  
+}
+variable "gatewaynameinvpc2" {
+  
+}
+variable "routername1" {
+  
+}
+variable "routername2" {
+  
+}
+variable "gateway1region" {
+  
+}
+variable "gateway2region"{
+
+}
+variable "regionforbothrouters" {
+  
+}
+variable "sharedsecretkey1" {
+  
+}
+variable "sharedsecretkey2" {
+  
+}
+variable "projectfornetwork1" {
+  
+}
+variable "projectfornetwork2" {
+  
+}
+
+#Variables for router
+
+variable "routername3" {
+  
+}
 variable "routerregion3" {
   
 }
-
-variable "asn3" {
+variable "asnforrouter3" {
   
 }
 
-#LB Variables
-
-variable "bucketname" {
+#variables for load balancer
+variable "cdnlbbackendname" {
   
 }
-variable "backendname" {
+variable "managedzonename" {
   
 }
-variable "bucketlocation" {
+variable "urlmapnameforproxy" {
   
 }
-variable "lbname" {
+variable "objnameforhtml" {
   
 }
-variable "urlmapname"{
-
-}
-variable "project_id" {
+variable "bucketname2forwebsite" {
   
 }
-variable "zonename" {
+variable "bucketlocationforwebsite" {
   
 }
-variable "rulename" {
+variable "gforwardrulename" {
   
 }
-variable "objname" {
-  
-}
-# router variables
-variable "network3router3" {
+variable "targethttpproxyname" {
   
 }

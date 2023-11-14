@@ -4,11 +4,11 @@ variable "firewall_name" {
   type =string
   }
 
-variable "source_ranges" {
-  type = string
+variable "sourceranges" {
+  
 }
 
-variable "networkname" {
+variable "vpcname1" {
   type = string
 }
 variable "tcpports" {
@@ -18,8 +18,8 @@ variable "tcpports" {
 variable "targettag" {
 }
 
-variable "sourcetags" {
-}
-variable "projectid" {
+/*variable "sourcetags" {
+}*/
+/*variable "projectid" {
   
-}
+}*/

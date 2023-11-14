@@ -2,9 +2,9 @@
 
 resource "google_compute_firewall" "network-firewall" {
   name = var.firewall_name
-  network = var.networkname
+  network = var.vpcname1
   target_tags = var.targettag  
-  source_tags = var.sourcetags
+  source_ranges = var. sourceranges
 
   allow {
     protocol = "tcp"

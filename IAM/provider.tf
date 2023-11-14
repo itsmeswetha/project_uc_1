@@ -1,4 +1,4 @@
-terraform {
+/*terraform {
   required_providers {
     google = {
       source = "hashicorp/google"
@@ -9,4 +9,4 @@ terraform {
 provider "google" {
   project     = var.project_id
   region      = "us-central1"
-}
+}*/

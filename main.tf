@@ -5,9 +5,8 @@
 **********************************/
 module "gcs"{
     source = "./GCS"
-    projectid = var.projectid1
-    bucketregion = var.bucketregion1
-    bucketname = var.bucketname1
+    bucketregion = var.bucketregion1forsf
+    bucketname = var.bucketname1forsf
 }
 
 /*********************************
@@ -16,9 +15,7 @@ module "gcs"{
 
 module "VPC"{
 source = "./VPC"
-vpc_name = var.vpcname
-projectid = provider.google.project
-defaultprojectregion = provider.google.region
+vpcname1 = var.firstvpcname
 }
 
 /*********************************
@@ -27,11 +24,10 @@ defaultprojectregion = provider.google.region
 
 module "subnet"{
     source = "./Subnet"
-    project-id = provider.google.project
     networksubnet = module.VPC.name
-    subnet_cidr = var.subnetip
-    subnet_name = var.subnetname
-    subnet_region = var.subnetregion
+    subnetcidr1 = var.subnetipinfirstvpc
+    subnetname1 = var.subnetnameinfirstvpc
+    subnetregion1 = var.regionoffirstvpcsubnet
 }
 
 /*********************************
@@ -39,14 +35,12 @@ module "subnet"{
 **********************************/
 module "firewallrule"{
     source = "./Firewall"
-    targettag = var.targettag
-    sourcetags = var.sourcetag
-    source_ranges = var.sourceranges
-    networkname = module.VPC.name
-    firewall_name = var.firewallname
-    tcpports = var.tcpports
-    projectid = var.projectid
-}      
+    firewall_name = var.firewallinfirstvpc
+    targettag = var.targetvmtags
+    vpcname1 = module.VPC.name
+    tcpports = var.portstoallow
+    sourceranges = var.allowthesourceip
+}
 
 /***********************************
        VPN Configuration
@@ -54,46 +48,45 @@ module "firewallrule"{
 
 module "vpn" {
     source = "./VPN"
-  range1 = var.range1
-  range2 = var.range2
-  range3 = var.range3
-  range4 = var.range4
-  asn1 = var.asn1
-  asn2 = var.asn2
-  interface0tunnel1 = var.interface0tunnel1
-  interface0tunnel2 = var.interface0tunnel2
-  interface1tunnel1 = var.interface1tunnel1
-  interface1tunnel2 = var.interface1tunnel2
-  network1 = var.network1
-  network2 = var.network2
-  network1subnet1 = var.network1subnet1
-  network1subnet2 = var.network1subnet2
-  network2subnet1 = var.network2subnet1
-  network2subnet2 = var.network2subnet2
-  network1region1 = var.network1region1
-  network1region2 = var.network1region2
-  network2region1 = var.network2region1
-  network2region2 = var.network2region2
-  router1interface1 = var.router1interface1
-  router1interface2 = var.router2interface2
-  router1peer1 = var.router1peer1
-  router1peer2 = var.router1peer2
-  router2interface1 = var.router2interface1
-  router2interface2 = var.router2interface2
-  router2peer1 = var.router2peer1
-  router2peer2 = var.router2peer2
-  gatewayname1 = var.gatewayname1
-  gatewayname2 = var.gatewayname2
-  network1router1 = var.network1router1
-  network2router2 = var.network2router2
-  region1 = var.region1
-  region2 = var.region2
-  routerregion = var.routerregion
-  secret1 = var.secret1
-  secret2 = var.secret2
-  projectid = var.projectid
-  project1 = var.project1
-  project2 = var.project2
+  range1 = var.cidrforsubnet1
+  range2 = var.cidrforsubnet2
+  range3 = var.cidrforsubnet3
+  range4 = var.cidrforsubnet4
+  asn1 = var.asnforrouter1
+  asn2 = var.asnforrouter2
+  interface0tunnel1 = var.tunnel00
+  interface0tunnel2 = var.tunnel01
+  interface1tunnel1 = var.tunnel11
+  interface1tunnel2 = var.tunnel12
+  network1 = var.vpcnetworkname1
+  network2 = var.vpcnetworkname2
+  network1subnet1 = var.subnet1nameinnet1
+  network1subnet2 = var.subnet2nameinnet1
+  network2subnet1 = var.subnet1nameinnet2
+  network2subnet2 = var.subnet2nameinnet2
+  network1region1 = var.subnet11region1
+  network1region2 = var.subnet21region2
+  network2region1 = var.subnet12region1
+  network2region2 = var.subnet22region2
+  router1interface1 = var.bgpinterface11
+  router1interface2 = var.bgpinterface12
+  router1peer1 = var.bgppeer11
+  router1peer2 = var.bgppeer12
+  router2interface1 = var.bgpinterface21
+  router2interface2 = var.bgpinterface22
+  router2peer1 = var.bgppeer21
+  router2peer2 = var.bgppeer22
+  gatewayname1 = var.gatewaynameinvpc1
+  gatewayname2 = var.gatewaynameinvpc2
+  network1router1 = var.routername1
+  network2router2 = var.routername2
+  region1 = var.gateway1region
+  region2 = var.gateway2region
+  routerregion = var.regionforbothrouters
+  secret1 = var.sharedsecretkey1
+  secret2 = var.sharedsecretkey2
+  project1 = var.projectfornetwork1
+  project2 = var.projectfornetwork2
 }
 
 /*********************************
@@ -102,10 +95,10 @@ module "vpn" {
 
 module "router" {
   source = "./Cloud_Router"
-  network1router1 = var.network3router3
+  routername = var.routername3
   routerregion = var.routerregion3
-  asn3 = var.asn3
-  project_id = var.project_id
+  asn3 = var.asnforrouter3
+  vpcforrouter = module.VPC.name
 }
 
 /***********************************
@@ -114,13 +107,12 @@ module "router" {
 
 module "lb" {
   source = "./Cloud_LB"
-  backendname = var.backendname
-  project_id = provider.google.project
-  zonename = var.zonename
-  urlmapname = var.urlmapname
-  objname = var.objname
-  bucketname = var.bucketname
-  bucketlocation = var.bucketlocation
-  rulename = var.rulename
-  lbname = var.lbname
+  backendname = var.cdnlbbackendname
+  zonename = var.managedzonename
+  urlmapname = var.urlmapnameforproxy
+  objname = var.objnameforhtml
+  bucketname = var.bucketname2forwebsite
+  bucketlocation = var.bucketlocationforwebsite
+  rulename = var.gforwardrulename
+  lbname = var.targethttpproxyname
 }

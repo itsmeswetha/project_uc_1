@@ -1,15 +1,15 @@
-variable "subnet_name" {
+variable "subnetname1" {
   
 }
-variable "subnet_region" {
+variable "subnetregion1" {
   
 }
-variable "subnet_cidr" {
+variable "subnetcidr1" {
   
 }
-variable "project-id" {
+/*variable "project-id" {
   
-}
+}*/
 variable "networksubnet" {
   
 }

@@ -1,135 +1,141 @@
-#LB variables
-
-bucketname = "sceg-buck3427"
-
-backendname = "backend-name"
-
-bucketlocation = "US"
-  
-
-lbname = "lb-name"
-  
-urlmapname = "url-map-name"
-
-project_id = "arboreal-path-397504" 
-  
-zonename = "stepup-zone"
-  
-rulename = "rule-name"
-  
-objname = "sceg-bucket-website"
-
-#Router variables
-  
-routerregion  = "us-central1"
-
-asn3 = "65518"
-
- #Firewall variables
-
- firewallname = "firewall1"
-
-tcpports = ["22","80","443"]
-
-targettag = "net"
-
-sourcetag = "source"
+# Variables values for provider
 
 projectid = "arboreal-path-397504"
-
-sourceranges = "0.0.0.0/0"
-
-#GCS Variables
-
-bucketname1 = "sceg-buck-for-sf-3126"
-
-bucketregion1 = "US"
-
-#Subnet Variables
-
-subnetname = "subnet-for-project"
   
-subnetregion = "us-central1"
+projectregion = "us-central1"
+
+# Variables values for GCS
+
+bucketregion1forsf = "US"  
+
+bucketname1forsf = "sceg-buck-for-sf-827"
+
+# Variables values for VPC
+
+firstvpcname = "vpc1-for-sceg-uc"
   
-subnetip = "10.1.0.0/25"
+
+# Variables for Subnet
+
+subnetipinfirstvpc = "10.1.0.0/26"
   
-#VPC Variables
+subnetnameinfirstvpc = "subnet-1-for-sceg-uc"
+  
+regionoffirstvpcsubnet = "us-central1"
+  
 
-vpcname = "network-for-project-setup"
+#Variables values in firewall
 
-#VPN Variables
+firewallinfirstvpc = "firewall-to-allow-ssh-http"
 
-asn1 = "65515"
+targetvmtags = "net"
+  
+portstoallow = ["22","80","443"]
+  
+allowthesourceip = ["0.0.0.0/0"]
 
-asn2 = "65516"
+#Variables values for VPN 
 
-gatewayname1 = "gateway1"
+cidrforsubnet1 = "10.3.0.0/26"
+  
+cidrforsubnet2 = "10.5.0.0/26"
+  
+cidrforsubnet3 = "10.7.0.0/26"
+  
+cidrforsubnet4 = "10.9.0.0/26"
+  
+asnforrouter1 = "65515"
 
-gatewayname2 = "gateway2"
+asnforrouter2 = "65516"
+  
+tunnel00 = "tunnel1"
+  
+tunnel01 = "tunnel2"
+  
+tunnel11 = "tunnel3"
+  
+tunnel12 = "tunnel4"
+  
+vpcnetworkname1 = "network1"
 
-interface0tunnel1 = "tunnel1"
+vpcnetworkname2 = "network2"
+  
+subnet1nameinnet1 = "subnet-1-in-vpc-1"
+  
+subnet2nameinnet1 = "subnet-2-in-vpc-1"
+  
+subnet1nameinnet2 = "subnet-1-in-vpc-2"
+  
+subnet2nameinnet2 = "subnet-2-in-vpc-2"
+  
+subnet11region1 = "us-central1"
+  
+subnet21region2 = "us-east1"
+  
+subnet12region1 = "us-central1"
+  
+subnet22region2 = "us-central1"
+  
+bgpinterface11 = "us-east1"
+  
+bgpinterface12 = "bgpin12"
+  
+bgppeer11 = "bgppeer11"
+  
+bgppeer12 = "bgppeer12"
+  
+bgpinterface21 = "bgpin21"
+  
+bgpinterface22 = "bgpin22"
+  
+bgppeer21 = "bgppeer21"
+  
+bgppeer22 = "bgppeer22"
+  
+gatewaynameinvpc1 = "gateway-1"
+  
+gatewaynameinvpc2 = "gateway-2"
 
-interface0tunnel2 = "tunnel2"
+routername1 = "router-for-vpn-1"
+  
+routername2 = "router-for-vpn-2"
+  
+gateway1region = "us-central1"
+  
+gateway2region = "us-central1"
 
-interface1tunnel1 = "tunnel3"
+regionforbothrouters = "us-central1"
+  
+sharedsecretkey1 = "good"
+  
+sharedsecretkey2 = "test"
 
-interface1tunnel2 = "tunnel4"
+projectfornetwork1 = "arboreal-path-397504"
+  
+projectfornetwork2 = "arboreal-path-397504"
 
-network1 = "network1"
+#Variable values for router
 
-network1region1 = "us-central1"
+routername3 = "router-for-main-vpc"
 
-network1region2 = "us-east1"
+routerregion3 = "asia-south1"
 
-network1router1 = "router1"
+asnforrouter3 = "65519"
 
-network1subnet1 = "subnet1"
+#Variable values for lb
 
-network1subnet2 = "subnet2"
+cdnlbbackendname = "cdn-lb-backend"
 
-network2 = "network2"
+managedzonename = "stepup-zone"
 
-network2region1 = "us-central1"
+urlmapnameforproxy = "url-for-http-proxy"
 
-network2region2 = "us-east1"
+objnameforhtml = "obj-name-to-store-html"
 
-network2router2 = "router2"
+bucketlocationforwebsite = "US"
 
-network2subnet1 = "subnet3"
+bucketname2forwebsite = "sceg-buck-for-website-465"
 
-network2subnet2 = "subnet4"
+gforwardrulename = "gforwardingrule"
 
-range1 = "10.1.0.0/24"
-
-range2 = "10.2.0.0/24"
-
-range3 = "10.3.0.0/24"
-
-range4 = "10.4.0.0/24"
-
-region1 = "us-central1"
-
-region2 = "us-central1"
-
-router1interface1 = "r1i1"
-
-router1interface2 = "r1i2"
-
-router1peer1 = "r1p1"
-
-router1peer2 = "r1p2"
-
-router2interface1 = "r2i1"
-
-router2interface2 = "r2i2"
-
-router2peer1 = "r2p1"
-
-router2peer2 = "r2p2"
-
-secret1 = "good"
-
-secret2 = "good"
-
-
-
+targethttpproxyname = "lb-for-website"

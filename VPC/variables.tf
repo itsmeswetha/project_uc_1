@@ -1,13 +1,13 @@
-variable "vpc_name" {
+variable "vpcname1" {
   type =  string
   description = "My first network"
 }
 
-variable "projectid" {
+/*variable "projectid" {
   type = string
   description = "The project this network belongs"
 }
 variable "defaultprojectregion" {
   type = string
   description = "The default region for the project"
-}
+}*/

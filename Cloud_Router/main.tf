@@ -1,9 +1,9 @@
 # Creating a Router
 
 resource "google_compute_router" "router1" {
-  name    = var.network1router1
+  name    = var.routername
   region  = var.routerregion
-  network = module.VPC.google_compute_network.network.name
+  network = var.vpcforrouter
   bgp {
     asn = var.asn3
   }

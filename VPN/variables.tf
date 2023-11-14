@@ -146,10 +146,10 @@ variable "router2peer2" {
   type = string
   description = "r2p2"
 }
-variable "projectid" {
+/*variable "projectid" {
   type = string
   description = "project id"
-}
+}*/
 variable "project1" {
   type = string
   description = "Project 1"
