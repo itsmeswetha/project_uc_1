@@ -12,7 +12,7 @@ resource "google_compute_ha_vpn_gateway" "ha_gateway2" {
 
 resource "google_compute_network" "network1" {
   name                    = var.network1
-  routing_mode            = "Global"
+  routing_mode            = "GLOBAL"
   auto_create_subnetworks = false
   project = var.project1
 }

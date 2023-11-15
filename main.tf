@@ -3,11 +3,11 @@
 /*********************************
    Storing statefile in bucket
 **********************************/
-module "gcs"{
+/*module "gcs"{
     source = "./GCS"
     bucketregion = var.bucketregion1forsf
     bucketname = var.bucketname1forsf
-}
+}*/
 
 /*********************************
          VPC Configuration
@@ -24,7 +24,7 @@ vpcname1 = var.firstvpcname
 
 module "subnet"{
     source = "./Subnet"
-    networksubnet = module.VPC.name
+    networksubnet = module.VPC.network-1
     subnetcidr1 = var.subnetipinfirstvpc
     subnetname1 = var.subnetnameinfirstvpc
     subnetregion1 = var.regionoffirstvpcsubnet
@@ -37,7 +37,7 @@ module "firewallrule"{
     source = "./Firewall"
     firewall_name = var.firewallinfirstvpc
     targettag = var.targetvmtags
-    vpcname1 = module.VPC.name
+    vpcname1 = module.VPC.network-1
     tcpports = var.portstoallow
     sourceranges = var.allowthesourceip
 }
@@ -98,7 +98,7 @@ module "router" {
   routername = var.routername3
   routerregion = var.routerregion3
   asn3 = var.asnforrouter3
-  vpcforrouter = module.VPC.name
+  vpcforrouter = module.VPC.network-1
 }
 
 /***********************************
