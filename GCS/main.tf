@@ -1,6 +1,6 @@
 # Creating a cloud storage bucket
 
-resource "google_storage_bucket" "bucket" {
+/*resource "google_storage_bucket" "bucket" {
   name = var.bucketname
   location = var.bucketregion
    storage_class = "STANDARD"
@@ -18,4 +18,4 @@ terraform {
    bucket  = var.bucketname
    prefix  = "terraform/state"
  }
-}
+}*/

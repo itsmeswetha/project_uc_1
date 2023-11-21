@@ -1,4 +1,4 @@
-bucketname = "sceg-buck3427"
+/*bucketname = "sceg-buck3427"
 
 backendname = "backend-name"
 
@@ -16,3 +16,4 @@ zonename = "stepup-zone"
 rulename = "rule-name"
   
 objname = "sceg-bucket-website"
+*/

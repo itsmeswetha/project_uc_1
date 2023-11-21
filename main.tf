@@ -3,12 +3,13 @@
 /*********************************
    Storing statefile in bucket
 **********************************/
-/*module "gcs"{
-    source = "./GCS"
-    bucketregion = var.bucketregion1forsf
-    bucketname = var.bucketname1forsf
-}*/
-
+#Storing the state file in the bucket
+terraform {
+ backend "gcs" {
+   bucket  = var.bucketname
+   prefix  = "terraform/state"
+ }
+}
 /*********************************
          VPC Configuration
 **********************************/         

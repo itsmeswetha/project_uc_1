@@ -6,9 +6,9 @@ projectregion = "us-central1"
 
 # Variables values for GCS
 
-bucketregion1forsf = "US"  
+/*bucketregion1forsf = "US"  
 
-bucketname1forsf = "sceg-buck-for-sf-827"
+bucketname1forsf = "sceg-buck-for-sf-827"*/
 
 # Variables values for VPC
 

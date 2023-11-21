@@ -10,12 +10,12 @@ variable "projectregion" {
 
 # Variables for GCS
 
-variable "bucketregion1forsf" {
+/*variable "bucketregion1forsf" {
   
 }
 variable "bucketname1forsf" {
   
-}
+}*/
 
 # Variables for VPC
 

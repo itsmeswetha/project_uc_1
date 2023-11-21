@@ -1,9 +1,9 @@
-variable "bucketname" {
+/*variable "bucketname" {
   
 }
 variable "bucketregion" {
   
 }
-/*variable "projectid" {
+variable "projectid" {
   
 }*/

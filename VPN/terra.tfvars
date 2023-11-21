@@ -1,4 +1,4 @@
-asn1 = "65515"
+/*asn1 = "65515"
 
 asn2 = "65516"
 
@@ -70,4 +70,4 @@ routerregion = "us-central1"
 
 secret1 = "good"
 
-secret2 = "good"
+secret2 = "good"*/

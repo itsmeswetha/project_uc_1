@@ -18,7 +18,7 @@ resource "google_storage_bucket" "backend-for-cdn-lb" {
 resource "google_storage_bucket_object" "static-website" {
   name = var.objname
  bucket = google_storage_bucket.backend-for-cdn-lb.name
- source = "../static_website/index.html"
+ source = "../website/index.html"
 }
 
 resource "google_storage_object_access_control" "Website-access" {
