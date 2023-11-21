@@ -28,7 +28,7 @@ regionoffirstvpcsubnet = "us-central1"
 
 firewallinfirstvpc = "firewall-to-allow-ssh-http"
 
-targetvmtags = "net"
+targetvmtags = ["net"]
   
 portstoallow = ["22","80","443"]
   
