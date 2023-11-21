@@ -6,7 +6,7 @@
 #Storing the state file in the bucket
 terraform {
  backend "gcs" {
-   bucket  = var.bucketname
+   bucket  = "sceg-buck-for-sf-187625"
    prefix  = "terraform/state"
  }
 }
