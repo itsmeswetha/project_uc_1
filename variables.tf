@@ -211,3 +211,23 @@ variable "gforwardrulename" {
 variable "targethttpproxyname" {
   
 }
+
+#Variables for IAM
+variable "sadisplay-name" {
+  
+}
+variable "said" {
+  
+}
+variable "role1sa" {
+  
+}
+variable "role2sa" {
+  
+}
+variable "role3sa" {
+  
+}
+variable "role4sa" {
+  
+}
