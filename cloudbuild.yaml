@@ -1,11 +1,17 @@
-
 steps:
-    - name: 'bash'
-      args: ['echo', 'Hello world!']
-      serviceAccount: 'projects/arboreal-path-397504/serviceAccounts/uc1-sa-test-2@arboreal-path-397504.iam.gserviceaccount.com'
-    - id: 'terraform init'
-      name: 'hashicorp/terraform:1.0.0'
-      script: terraform init
-    - id: 'terraform plan'
-      name: 'hashicorp/terraform:1.0.0'
-      script: terraform plan
+  - name: 'hashicorp/terraform:latest'
+    args:
+      - 'init'
+    dir: './IAM'
+
+  # Step to create a service account using a module
+  - name: 'hashicorp/terraform:latest'
+    args:
+      - 'apply'
+      - '-auto-approve'
+    env:
+      - 'TF_VAR_project_id=${PROJECT_ID}'
+      - 'TF_VAR_service_account_name=my-service-account'
+    dir: './IAM'
+
+  

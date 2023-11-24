@@ -213,7 +213,7 @@ variable "targethttpproxyname" {
 }
 
 #Variables for IAM
-variable "sadisplay-name" {
+/*variable "sadisplay-name" {
   
 }
 variable "said" {
@@ -230,4 +230,4 @@ variable "role3sa" {
 }
 variable "role4sa" {
   
-}
+}*/
