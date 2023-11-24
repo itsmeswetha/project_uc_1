@@ -7,6 +7,6 @@ terraform {
   }
 }
 provider "google" {
-  project     = var.project_id
+  project     = "arboreal-path-397504"
   region      = "us-central1"
 }
