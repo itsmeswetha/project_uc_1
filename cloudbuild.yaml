@@ -1,17 +1,24 @@
+#steps:
+# Step to create a service account using a module
+  #- name: 'hashicorp/terraform:latest'
+   #  - 'init'
+    #dir: './IAM'
+ 
+ # - name: 'hashicorp/terraform:latest'
+  #  args:
+   #   - 'apply'
+     # - '-auto-approve'
+    #env:
+    #  - 'TF_VAR_project_id=${PROJECT_ID}'
+    #  - 'TF_VAR_service_account_name=my-service-account'
+    #dir: './IAM'
 steps:
-  - name: 'hashicorp/terraform:latest'
-    args:
-      - 'init'
-    dir: './IAM'
-
-  # Step to create a service account using a module
-  - name: 'hashicorp/terraform:latest'
-    args:
-      - 'apply'
-      - '-auto-approve'
-    env:
-      - 'TF_VAR_project_id=${PROJECT_ID}'
-      - 'TF_VAR_service_account_name=my-service-account'
-    dir: './IAM'
+- name: 'bash'
+  args: ['echo', 'Hello world!']
+logsBucket: 'sceg-buck-for-buildsa-187625'
+serviceAccount: 'projects/arboreal-path-397504/serviceAccounts/ uc1-sa-test-2@arboreal-path-397504.iam.gserviceaccount.com'
+options:
+  logging: GCS_ONLY
+  
 
   

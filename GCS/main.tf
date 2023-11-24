@@ -2,7 +2,7 @@
 
 /*resource "google_storage_bucket" "bucket" {
   name = var.bucketname
-  location = var.bucketregion
+  location = 
    storage_class = "STANDARD"
   versioning {
     enabled = true
@@ -12,7 +12,7 @@
   }
 }
 
-#Storing the state file in the bucket
+Storing the state file in the bucket
 terraform {
  backend "gcs" {
    bucket  = var.bucketname
