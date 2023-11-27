@@ -11,5 +11,5 @@ provider "google" {
   # Configuration options
   project = "arboreal-path-397504"
   region = "us_central1"
-  credentials = file("key.json")
+  #credentials = file("key.json")
 }
