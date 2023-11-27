@@ -1,4 +1,4 @@
-/*terraform {
+terraform {
   required_providers {
     google = {
       source = "hashicorp/google"
@@ -9,7 +9,7 @@
 
 provider "google" {
   # Configuration options
-  project = var.projectid
+  project = "arboreal-path-397504"
   region = "us_central1"
   credentials = file("key.json")
-}*/
+}
