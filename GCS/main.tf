@@ -4,6 +4,7 @@ resource "google_storage_bucket" "bucket" {
   name = var.bucketnametostoresf
   location = var.bucketlocationtostoresf
    storage_class = "STANDARD"
+   force_destroy = "true"
   versioning {
     enabled = true
   }

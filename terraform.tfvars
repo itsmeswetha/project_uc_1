@@ -16,7 +16,7 @@ nameofobjforsf = "obj-to-store-sf"
 
 bucketregiontostoresf = "US"
 
-pathtostatefile = "./tfstate"
+pathtostatefile = "./terraform.tfstate"
 
 # Variables values for VPC
 
