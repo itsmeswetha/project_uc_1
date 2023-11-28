@@ -1,6 +1,6 @@
 # Variables values for provider
 
-projectid = "arboreal-path-397504"
+projectid = "swetham"
   
 projectregion = "us-central1"
 
@@ -118,9 +118,9 @@ sharedsecretkey1 = "good"
   
 sharedsecretkey2 = "test"
 
-projectfornetwork1 = "arboreal-path-397504"
+projectfornetwork1 = "swetham"
   
-projectfornetwork2 = "arboreal-path-397504"
+projectfornetwork2 = "swetham"
 
 #Variable values for router
 
