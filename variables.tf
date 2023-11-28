@@ -10,6 +10,19 @@ variable "projectregion" {
 
 # Variables for GCS
 
+variable "nameofbucktostoresf" {
+  
+}
+variable "nameofobjforsf" {
+  
+}
+variable "bucketregiontostoresf" {
+  
+}
+variable "pathtostatefile" {
+  
+}
+
 /*variable "bucketregion1forsf" {
   
 }
@@ -209,6 +222,12 @@ variable "gforwardrulename" {
   
 }
 variable "targethttpproxyname" {
+  
+}
+variable "pathtowebsite" {
+  
+}
+variable "staticipforlb" {
   
 }
 

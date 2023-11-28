@@ -10,6 +10,14 @@ projectregion = "us-central1"
 
 bucketname1forsf = "sceg-buck-for-sf-827"*/
 
+nameofbucktostoresf = "sceg-buck-for-sf-unique-41"
+
+nameofobjforsf = "obj-to-store-sf"
+
+bucketregiontostoresf = "US"
+
+pathtostatefile = "./tfstate"
+
 # Variables values for VPC
 
 firstvpcname = "vpc1-for-sceg-uc"
@@ -139,3 +147,7 @@ bucketname2forwebsite = "sceg-buck-for-website-465"
 gforwardrulename = "gforwardingrule"
 
 targethttpproxyname = "lb-for-website"
+
+pathtowebsite = "./website/index.html"
+
+staticipforlb = "static-ip-for-lb"

@@ -23,3 +23,9 @@ variable "rulename" {
 variable "objname" {
   
 }
+variable "websitepath" {
+  
+}
+variable "staticipname" {
+  
+}

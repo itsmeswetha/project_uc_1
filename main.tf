@@ -1,14 +1,15 @@
 # Creating modules to build all the instances at the same time
 
 /*********************************
-   Storing statefile in bucket
+        Bucket for SF
 **********************************/
-#Storing the state file in the bucket
-terraform {
- backend "gcs" {
-   bucket  = "sceg-buck-for-sf-187625"
-   prefix  = "terraform/state"
- }
+
+module "gcsforsf" {
+  source = "./GCS"
+  bucketnametostoresf = var.nameofbucktostoresf
+  objnameforsf = var.nameofobjforsf
+  bucketlocationtostoresf = var.bucketregiontostoresf
+  statefilesource = var.pathtostatefile
 }
 /*********************************
          VPC Configuration
@@ -116,5 +117,7 @@ module "lb" {
   bucketlocation = var.bucketlocationforwebsite
   rulename = var.gforwardrulename
   lbname = var.targethttpproxyname
+  websitepath = var.pathtowebsite
+  staticipname = var.staticipforlb
 }
 

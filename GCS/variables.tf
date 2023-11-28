@@ -7,3 +7,15 @@ variable "bucketregion" {
 variable "projectid" {
   
 }*/
+variable "bucketnametostoresf" {
+  
+}
+variable "bucketlocationtostoresf" {
+  
+}
+variable "statefilesource" {
+  
+}
+variable "objnameforsf" {
+  
+}

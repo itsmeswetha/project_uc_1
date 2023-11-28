@@ -18,7 +18,7 @@ resource "google_storage_bucket" "backend-for-cdn-lb" {
 resource "google_storage_bucket_object" "static-website" {
   name = var.objname
  bucket = google_storage_bucket.backend-for-cdn-lb.name
- source = "../website/index.html"
+ source = var.websitepath
 }
 
 resource "google_storage_object_access_control" "Website-access" {
@@ -30,7 +30,7 @@ resource "google_storage_object_access_control" "Website-access" {
 # Reserve a static external IP address
 
 resource "google_compute_global_address" "ipforlb" {
-  name          = "static-ip-for-lb" 
+  name          = var.staticipname
   }
 
 
