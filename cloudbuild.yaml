@@ -1,17 +1,18 @@
 ---
 steps:
-  - name: 'bash'
-    args: ['echo', 'Hello world!']
-    serviceAccount: 'projects/swetham/serviceAccounts/sa-for-uc-test-1@swetham.iam.gserviceaccount.com'
+  - name: bash
+    args:
+      - echo
+      - Hello world!
+    serviceAccount: projects/swetham/serviceAccounts/sa-for-uc-test-1@swetham.iam.gserviceaccount.com
     options:
-    logging: CLOUD_LOGGING_ONLY
+      logging: CLOUD_LOGGING_ONLY
   - id: terraform init
     name: hashicorp/terraform:1.0.0
     script: terraform init
   - id: terraform plan
     name: hashicorp/terraform:1.0.0
     script: terraform plan
-  - id: 'terraform apply'
-    name: 'hashicorp/terraform:1.0.0'
+  - id: terraform apply
+    name: hashicorp/terraform:1.0.0
     script: terraform apply --auto-approve
-  
