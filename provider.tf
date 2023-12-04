@@ -11,5 +11,5 @@ provider "google" {
   # Configuration options
   project = var.projectid
   region = var.projectregion
-  #credentials = file("key.json")
+  credentials = file("key.json")
 }
