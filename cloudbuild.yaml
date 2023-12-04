@@ -1,16 +1,17 @@
----
+options:
+    serviceAccount: 'sa-for-uc-test-1@swetham.iam.gserviceaccount.com'
 steps:
-  - name: bash
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
     args:
-      - echo
-      - Hello world!
-    serviceAccount: projects/swetham/serviceAccounts/sa-for-uc-test-1@swetham.iam.gserviceaccount.com
-  - id: terraform init
-    name: hashicorp/terraform:1.0.0
-    script: terraform init
-  - id: terraform plan
-    name: hashicorp/terraform:1.0.0
-    script: terraform plan
-  - id: terraform apply
-    name: hashicorp/terraform:1.0.0
-    script: terraform apply --auto-approve
+      - '-c'
+      - |
+        gcloud auth activate-service-account --key-file= ./key.json
+  - name: 'hashicorp/terraform'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        terraform init
+        terraform plan
+        terraform apply -auto-approve
