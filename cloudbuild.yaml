@@ -20,4 +20,6 @@ steps:
       - 'TF_VAR_project_id=swetham'
       - 'TF_VAR_region=us-central1'
       # Add other Terraform environment variables as needed
+substitutions:
+  _NON_DEFAULT_SA_KEY: projects/swetham/secrets/terraform-key/versions/latest
 
