@@ -5,7 +5,7 @@ steps:
       - '-c'
       - |
         export GOOGLE_APPLICATION_CREDENTIALS=/workspace/terraform-key.json
-        gcloud secrets versions access latest --secret=terraform-key > $GOOGLE_APPLICATION_CREDENTIALS
+        gcloud secrets versions access latest --secret=terraform-key > $$GOOGLE_APPLICATION_CREDENTIALS
   - name: 'gcr.io/cloud-builders/terraform'
     args: ['init']
     env:
