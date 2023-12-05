@@ -1,17 +1,12 @@
-options:
-    serviceAccount: 'sa-for-uc-test-1@swetham.iam.gserviceaccount.com'
 steps:
-  - name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: 'bash'
-    args:
-      - '-c'
-      - |
-        gcloud auth activate-service-account --key-file= ./key.json
-  - name: 'hashicorp/terraform'
-    entrypoint: 'bash'
-    args:
-      - '-c'
-      - |
-        terraform init
-        terraform plan
-        terraform apply -auto-approve
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+    - '-c'
+    - |
+      export GOOGLE_APPLICATION_CREDENTIALS=/workspace/keyfile.json
+      gcloud secrets versions access latest --secret=terraform-key > $GOOGLE_APPLICATION_CREDENTIALS
+- name: 'gcr.io/cloud-builders/terraform'
+  args: ['init']
+- name: 'gcr.io/cloud-builders/terraform'
+  args: ['apply', '-auto-approve']
