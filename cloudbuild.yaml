@@ -4,18 +4,20 @@ steps:
     args:
       - '-c'
       - |
-        export GOOGLE_APPLICATION_CREDENTIALS=/workspace/terraform-key
-        gcloud secrets versions access latest --secret=terraform-key > $GOOGLE_APPLICATION_CREDENTIALS
+        export NON_DEFAULT_SA_KEY=/workspace/non-default-sa-key.json
+        gcloud secrets versions access latest --secret=terraform-key > $NON_DEFAULT_SA_KEY
   - name: 'gcr.io/cloud-builders/terraform'
     args: ['init']
-  - name: 'gcr.io/cloud-builders/terraform'
-    args: ['apply', '-auto-approve']
     env:
-      - 'GOOGLE_APPLICATION_CREDENTIALS=/workspace/terraform-key'
+      - 'GOOGLE_APPLICATION_CREDENTIALS=/workspace/non-default-sa-key.json'
       - 'TF_VAR_project_id=swetham'
       - 'TF_VAR_region=us-central1'
       # Add other Terraform environment variables as needed
-secrets:
-  - versionName: projects/swetham/secrets/terraform-key
-    env: 'GOOGLE_APPLICATION_CREDENTIALS'
+  - name: 'gcr.io/cloud-builders/terraform'
+    args: ['apply', '-auto-approve']
+    env:
+      - 'GOOGLE_APPLICATION_CREDENTIALS=/workspace/non-default-sa-key.json'
+      - 'TF_VAR_project_id=swetham'
+      - 'TF_VAR_region=us-central1'
+      # Add other Terraform environment variables as needed
 
