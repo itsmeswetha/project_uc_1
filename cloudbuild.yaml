@@ -4,8 +4,8 @@ steps:
     args:
       - '-c'
       - |
-        export NON_DEFAULT_SA_KEY=/workspace/terraform-key
-        gcloud secrets versions access latest --secret=terraform-key > $NON_DEFAULT_SA_KEY
+        export GOOGLE_APPLICATION_CREDENTIALS=/workspace/terraform-key
+        gcloud secrets versions access latest --secret=terraform-key > $GOOGLE_APPLICATION_CREDENTIALS
   - name: 'gcr.io/cloud-builders/terraform'
     args: ['init']
   - name: 'gcr.io/cloud-builders/terraform'
