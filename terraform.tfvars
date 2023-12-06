@@ -10,7 +10,7 @@ projectregion = "us-central1"
 
 bucketname1forsf = "sceg-buck-for-sf-827"*/
 
-nameofbucktostoresf = "sceg-buck-for-sf-unique-41"
+nameofbucktostoresf = "sceg-buck-for-sf-unique-419"
 
 nameofobjforsf = "obj-to-store-sf"
 
