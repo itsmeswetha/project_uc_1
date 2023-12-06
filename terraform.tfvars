@@ -10,13 +10,13 @@ projectregion = "us-central1"
 
 bucketname1forsf = "sceg-buck-for-sf-827"*/
 
-nameofbucktostoresf = "sceg-buck-for-sf-unique-419"
+/*nameofbucktostoresf = "sceg-buck-for-sf-unique-419"
 
 nameofobjforsf = "obj-to-store-sf"
 
 bucketregiontostoresf = "US"
 
-pathtostatefile = "./terraform.tfstate"
+pathtostatefile = "./terraform.tfstate"*/
 
 # Variables values for VPC
 

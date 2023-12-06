@@ -9,7 +9,7 @@ terraform {
 
 provider "google" {
   # Configuration options
-  project = "arboreal-path-397504"
-  region = "us_central1"
+  project = var.projectforbucketsf
+  region = var.regionforbucketsf
   #credentials = file("key.json")
 }

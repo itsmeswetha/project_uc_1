@@ -10,7 +10,7 @@ variable "projectregion" {
 
 # Variables for GCS
 
-variable "nameofbucktostoresf" {
+/*variable "nameofbucktostoresf" {
   
 }
 variable "nameofobjforsf" {
@@ -21,8 +21,7 @@ variable "bucketregiontostoresf" {
 }
 variable "pathtostatefile" {
   
-}
-
+}*/
 /*variable "bucketregion1forsf" {
   
 }

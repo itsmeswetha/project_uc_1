@@ -7,6 +7,20 @@ steps:
         export GOOGLE_APPLICATION_CREDENTIALS=/workspace/terraform-key.json
         gcloud secrets versions access latest --secret=terraform-key > $$GOOGLE_APPLICATION_CREDENTIALS
   - name: 'hashicorp/terraform:1.0.0'
+    args: ['init', './GCS']
+    dir: './GCS'
+    env:
+      - GOOGLE_APPLICATION_CREDENTIALS=/workspace/terraform-key.json
+      - TF_VAR_project_id=swetham
+      - TF_VAR_region=us-central1
+  - name: 'hashicorp/terraform:1.0.0'
+    args: ['apply', '-auto-approve', './GCS']
+    dir: './GCS'
+    env:
+      - GOOGLE_APPLICATION_CREDENTIALS=/workspace/terraform-key.json
+      - TF_VAR_project_id=swetham
+      - TF_VAR_region=us-central1
+  - name: 'hashicorp/terraform:1.0.0'
     args: ['init']
     env:
       - GOOGLE_APPLICATION_CREDENTIALS=/workspace/terraform-key.json

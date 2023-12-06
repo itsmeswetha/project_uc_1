@@ -13,3 +13,11 @@ provider "google" {
   region = var.projectregion
   #credentials = file("key.json")
 }
+
+#Storing the state file in the bucket
+terraform {
+ backend "gcs" {
+   bucket  = "sceg-buck-for-sf-827"
+   prefix  = "terraform/state"
+ }
+}

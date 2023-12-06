@@ -4,13 +4,13 @@
         Bucket for SF
 **********************************/
 
-module "gcsforsf" {
+/*module "gcsforsf" {
   source = "./GCS"
   bucketnametostoresf = var.nameofbucktostoresf
   objnameforsf = var.nameofobjforsf
   bucketlocationtostoresf = var.bucketregiontostoresf
   statefilesource = var.pathtostatefile
-}
+}*/
 /*********************************
          VPC Configuration
 **********************************/         

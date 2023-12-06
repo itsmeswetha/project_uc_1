@@ -13,9 +13,15 @@ variable "bucketnametostoresf" {
 variable "bucketlocationtostoresf" {
   
 }
-variable "statefilesource" {
+/*variable "statefilesource" {
   
 }
 variable "objnameforsf" {
+  
+}*/
+variable "projectforbucketsf" {
+  
+}
+variable "regionforbucketsf" {
   
 }

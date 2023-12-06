@@ -10,11 +10,11 @@ resource "google_storage_bucket" "bucket" {
   }
   }
 
-resource "google_storage_bucket_object" "statefile" {
+/*resource "google_storage_bucket_object" "statefile" {
   source = var.statefilesource
   name = var.objnameforsf
   bucket = google_storage_bucket.bucket.name
-}
+}*/
 /*Storing the state file in the bucket
 terraform {
  backend "gcs" {
